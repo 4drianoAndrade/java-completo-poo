@@ -1,2 +1,2 @@
-# java-completo-poo
-Conteúdo das aulas do curso de Java DevSuperior na Udemy.
+# Java DevSuperior Udemy
+Exercícios do Curso de Java do Profº Nélio Alves na Udemy.

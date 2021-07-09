@@ -1,0 +1,154 @@
+					
+
+						// GIT
+
+// Verifica se o Git está instalado corretamente:
+git
+
+
+// Consulta as informações e verifica se possui usuário logado:
+git config --list
+
+
+// Vincula o usuário ao GitHub, para créditos:
+git config --global user.name "User Name"
+git config --global user.email "UserName@email.com"
+
+
+// Inicia um novo repositório local na pasta do seu projeto:
+git init
+
+
+// Associa seu repositório local ao repositório remoto, com o apelido de "origin":
+// ATENÇÃO: troque pelo caminho do seu repositório do Github.
+git remote add origin https://github.com/username/aula1-github.git
+
+
+// Atualiza seu repositório local em relação ao repositório remoto:
+// ATENÇÃO: este comando só é necessário se você criou o .gitignore pelo Github.
+git pull origin main
+
+
+// Altera o branch padrão para main:
+// NOTA: o branch padrão master, foi alterado para main.
+git checkout -b main
+
+
+// Verifica arquivos:
+git status
+
+
+// Adiciona todos arquivos ao stage:
+git add .
+
+
+// Salva uma nova versão do projeto:
+git commit -m "Projeto criado"
+
+
+// Envia o repositório local para o repositório remoto:
+// NOTA: nas próximas vezes basta fazer: 'git push'.
+git push -u origin main
+git push
+
+
+// Lista o histórico de commits:
+git log --oneline
+
+
+					// Kit de primeiros socorros
+
+
+// Vai mostrar a última modificação:
+git status
+
+
+// Quero desfazer tudo que eu fiz desde o último commit:
+// NOTA: o próprio Eclipse vai detectar o desfazimento, e vai voltar para a versão do último commit.
+git clean -df
+git checkout -- .
+
+
+// Preciso remover o último commit, porém mantendo os arquivos do jeito que estão:
+git reset --soft HEAD~1
+
+
+// Vai mostrar a última modificação:
+git status
+
+
+// Lista o histórico de commits:
+git log --oneline
+
+
+// NOTA: porém o GitHub não aceitará um novo 'git commit -m ""' criado, usando o comando 'git push', pelo fato de serem commits com códigos de identificação diferentes. Uma alternativa é:
+
+
+// Preciso apagar o último commit no Github:
+git push -f origin HEAD^:main
+
+
+// NOTA: agora ele aceita o 'git push'
+
+
+// Lista o histórico de commits:
+git log --oneline
+
+
+// Preciso remover o último commit, inclusive as alterações nos arquivos:
+// ATENÇÃO: Perigoso!
+git reset --hard HEAD~1
+
+
+// Lista o histórico de commits:
+git log --oneline
+
+
+// Atualiza seu repositório local em relação ao repositório remoto:
+git pull origin main
+
+
+// NOTA: retorna o último commit salvo no GitHub, e atualiza o arquivo no Eclipse
+
+
+// Lista o histórico de commits:
+git log --oneline
+
+
+// Quero alterar temporariamente os arquivos do projeto de modo a ficarem no estado do commit informado:
+// ATENÇÃO: não podem haver modificações não commitadas no projeto.
+// EXEMPLO: git checkout e8a52f3
+git checkout <código do commit>
+
+
+// Lista o histórico de commits:
+git log --oneline
+
+
+// NOTA: Se por algum acidente, você alterar alguma coisa:
+git clean -df
+git checkout -- .
+
+
+// NOTA: para voltar ao último commit faça:
+git checkout main
+
+
+// Quero mudar o meu repositório remoto "origin":
+git remote set-url origin https://github.com/username/teste-novo-repo.git
+
+
+// Envia o repositório local para o repositório remoto:
+// NOTA: nas próximas vezes basta fazer: 'git push'.
+git push -u origin main
+git push
+
+
+// NOTA: com isso o repositório é alterado para um novo, porém com os mesmos arquivos do último.
+
+
+// Entrei no VIM por engano. Como sair?
+// NOTA: alterei o arquivo do código, fiz um 'git add .' e um 'git commit', esqueci de colocar o restante, então o Git vai entrar no editor VIM, para sair:
+// Tecle ESC, depois digite :q! e tecle ENTER
+ESC :q! ENTER
+

@@ -81,7 +81,8 @@ git status
 git log --oneline
 
 
-// NOTA: porém o GitHub não aceitará um novo 'git commit -m ""' criado, usando o comando 'git push', pelo fato de serem commits com códigos de identificação diferentes. Uma alternativa é:
+// NOTA: porém o GitHub não aceitará um novo 'git commit -m ""' criado, usando o comando 'git push',
+// pelo fato de serem commits com códigos de identificação diferentes. Uma alternativa é:
 
 
 // Preciso apagar o último commit no Github:
@@ -148,7 +149,8 @@ git push
 
 
 // Entrei no VIM por engano. Como sair?
-// NOTA: alterei o arquivo do código, fiz um 'git add .' e um 'git commit', esqueci de colocar o restante, então o Git vai entrar no editor VIM, para sair:
+// NOTA: alterei o arquivo do código, fiz um 'git add .' e um 'git commit', esqueci de colocar o restante,
+// então o Git vai entrar no editor VIM, para sair:
 // Tecle ESC, depois digite :q! e tecle ENTER
 ESC :q! ENTER
 

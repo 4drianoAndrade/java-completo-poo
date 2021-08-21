@@ -1,6 +1,6 @@
-### Java COMPLETO Programação Orientada a Objetos +Projetos
+## Java COMPLETO Programação Orientada a Objetos +Projetos
 
-### Curso completo de Java e OO, UML, JDBC, JavaFX, Spring Boot, JPA, Hibernate, MySQL, MongoDB e mais.
+## Curso completo de Java e OO, UML, JDBC, JavaFX, Spring Boot, JPA, Hibernate, MySQL, MongoDB e mais.
 
 Os tópicos de programação incluem:
 

@@ -19,19 +19,12 @@ Os tópicos de programação incluem:
 Também as principais **ferramentas** e **frameworks** tais como:
 
 - **JDBC** para acesso a dados baseado em SQL
-
 - **JavaFX** para interface gráfica
-
 - **Git / Github** para versionamento
-
 - **Spring Boot** - principal framework Java para desenvolvimento comercial em Java
-
 - **JPA / Hibernate** para acesso a dados com mapeamento objeto-relacional (ORM)
-
 - **Maven** para gerenciamento de dependências de projeto
-
 - **Spring Data JPA** - framework para acesso a dados ORM
-
 - **Spring Data MongoDB** - framework para acesso a dados NoSQL ao banco MongoDB
 
   

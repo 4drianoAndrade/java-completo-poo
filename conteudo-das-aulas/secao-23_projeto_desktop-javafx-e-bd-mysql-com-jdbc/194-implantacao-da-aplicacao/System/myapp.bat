@@ -1,0 +1,1 @@
+start javaw --module-path %PATH_TO_FX% --add-modules javafx.controls,javafx.fxml -cp myApp.jar application.Main

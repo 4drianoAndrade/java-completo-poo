@@ -1,0 +1,213 @@
+
+	Instruções para funcionamento do programa
+
+1 - Mova a pasta "myApp" para o diretório disco local C:\
+Mova o atalho myApp para a Área de Trabalho/Desktop
+
+2 - Instale o executável zulu11.50.19-ca-jdk11.0.12-win_x64 se a sua máquina for 64 bits ou
+zulu11.50.19-ca-jdk11.0.12-win_i686 se a sua máquina for 32 bits
+
+Link para baixar esses dois executáveis:
+
+64 bits
+https://cdn.azul.com/zulu/bin/zulu11.50.19-ca-jdk11.0.12-win_x64.msi
+
+32 bits
+https://cdn.azul.com/zulu/bin/zulu11.50.19-ca-jdk11.0.12-win_i686.msi
+
+Caso o seu pc tenha pelo menos 4GB de Memória Ram muito provavelmente o seu sistema operacional será 64 bits
+
+Para saber qual a versão do seu sistema operacional Windows, o comando 'msinfo32' fornece informações sobre o Windows
+em seu computador. Basta você digitar Executar no Menu Iniciar ou acessar pelo atalho (Botão do Windows + R),
+digitar msinfo32 e clicar em “OK” para abrir a janela com informações como o nome do sistema operacional, 
+versão e tipo do sistema operacional (32 e 64 bits). Se for "|Tipo do sistema | PC baseado em X64|" é 64 bits
+Se for "|Tipo do sistema | PC baseado em X86 ou X32|" é 32 bits
+
+Verifique se o executável será instalado nesse diretório:
+Location: C:\Program Files\Zulu\zulu-11\
+
+Next > Next > Install > Sim > Finish
+
+Depois da instalação você pode excluir o arquivo 'zulu11.50.19-ca-jdk11.0.12-win'
+
+3 - Vá para o Menu Iniciar e digite: Editar as variáveis de ambiente do sistema
+Clique na primeira opção, na aba Avançado procure na parte inferior e clique na opção/botão [ Variáveis de Ambiente... ]
+Na parte inferior terá uma tabela de nome Variáveis do sistema com dois campos: Variável | Valor
+No campo Variável, caso não exista a variável de nome JAVA_HOME, na parte inferior próximo de OK e Cancelar
+Clique na opção/botão [ Novo... ], caso já exista, selecione a variável JAVA_HOME e clique em [ Editar... ]
+
+4 - No campo "Nome da variável" escreva sem espaços no início ou no fim:
+JAVA_HOME
+
+E no campo "Valor da variável" cole esse endereço, onde foi instalado o zulu11.50.19-ca-jdk11.0.12-win_x64:
+C:\Program Files\Zulu\zulu-11\
+
+Clique em [ OK ], na mesma tabela "Variáveis do sistema", procure pela variável Path e clique em [ Editar... ]
+Provavelmente terá uma variável de nome "C:\Program Files\Zulu\zulu-11\bin\", copie esse código:
+%JAVA_HOME%\bin
+
+Para garantir o funcionamento do programa, na parte superior a direita, clique na opção/botão [ Novo ]
+E cole o código que foi copiado anteriormente, selecione a variável "%JAVA_HOME%\bin"
+Na parte direita clique na opção/botão [Mover para Cima] até que a variável "%JAVA_HOME%\bin" esteja em primeiro
+Por último clique em [ OK ] na parte inferior para confirmar
+
+*Se por acaso você não estiver utilizando o Windows 10, a variável "Path" provavelmente terá um endereço assim:
+C:\Program Files\Zulu\zulu-11\bin\;C:\Windows\system32;C:\Windows;C:\...
+
+Cole a variável "%JAVA_HOME%\bin;" no início do endereço, repare que tem um PONTO E VÍRGULA no final do 'bin'
+
+Será algo parecido com isso:
+%JAVA_HOME%\bin;C:\Program Files\Zulu\zulu-11\bin\;C:\Windows\system32;C:\Windows;C:\...*
+
+5 - Na mesma tabela clique novamente na opção/botão [ Novo.. ]
+No campo "Nome da variável" escreva sem espaços no início ou no fim:
+PATH_TO_FX
+
+E no campo "Valor da variável" cole esse endereço:
+C:\myApp\javafx-sdk\lib
+
+Clique em [ OK ], [ OK ] de novo e novamente em [ OK ]
+
+Nesse ponto o atalho myApp já consegue executar o programa
+Porém ele ainda não acessa os dados dos vendedores e os departamentos
+
+	
+	Instruções para acesso aos dados do BD MySQL
+
+1 - Primeiro você deve instalar o executável VC_redist.x64 se a sua máquina for 64 bits ou
+VC_redist.x86 se a sua máquina for 32 bits, caso já não esteja instalado em sua máquina
+
+De qualquer forma execute um dos dois, se você quiser ver o programa: 
+Menu Iniciar > Painel de Controle > Desinstalar um programa
+Microsoft Visual C++ 2015-2019 Redistributable (X64 ou X86) - Número da Versão...
+
+Link onde foram baixados esses dois executáveis: 
+https://support.microsoft.com/pt-br/topic/os-downloads-do-visual-c-mais-recentes-com-suporte-2647da03-1eea-4433-9aff-95f26a218cc0
+
+Você já pode excluir os 2 arquivos VC_redist.x
+
+2 - Abra o executável mysql-installer-web-community-8.0.26.0 > Sim
+Clique em Next, se aparecer um campo com os nomes:
+
+MySQL for Visual Studio número da versão | Status = Manual
+Connector/Python número da versão | Status = Manual
+
+Então está tudo ok, ele apenas está informando que caso você queira utilizar essas linguagens
+C# ou Python com o acesso ao banco de dados, você terá que instalar os ambientes próprios para desenvolvimento delas
+
+Clique em Next > Yes > Execute
+
+Se por acaso der Error em algum Status, clique em Try again
+Porém, os únicos necessários são o MySQL Server e MySQL Workbench
+
+Clique em Next > Execute > Next > Next > Next
+Escolha a opção de baixo:
+Use Legacy Authentication Method (Retain MySQL 5.x Compatibility)
+
+Clique em Next
+
+No campo 'MySQL Root Password' digite:1234567
+Repita essa senha "1234567" no campo 'Repeat Password'
+
+Na parte inferior em 'MySQL User Accounts'
+Clique em 'Add User', no campo 'User Name' digite:developer
+
+Na parte inferior em 'MySQL user credentials' no campo 'Password' digite:1234567
+Repita essa senha "1234567" no campo 'Confirm Password'
+
+Clique em OK > Next
+
+Próximo de Windows Service Name: [MySQL80     ]
+Desmarque a caixinha [v] Start the MySQL Server at System Startup
+
+Clique em Next > Execute > Finish > Next > Finish > Next
+
+Ele já detectou o servidor rodando e na parte inferior no campo 'Password' digite:1234567
+E clique em [ Check ], se na parte superior no campo Status aparecer em verde [Connection succeeded.]
+Então está tudo certo com o banco de dados
+
+Clique em Next > Execute > Finish > Next
+
+Desmarque a caixinha [v] Start MySQL Shell after setup
+
+Clique em Finish
+
+Link onde foi baixado esse executável: https://dev.mysql.com/downloads/installer/
+
+Você já pode excluir o executável "mysql-installer-web-community-8.0.26.0"
+
+Agora a pasta C:\myApp terá apenas as pastas/arquivos:
+javafx-sdk
+System
+instrucoes
+
+E o atalho myApp na área de trabalho
+
+3 - Antes de inserir os dados no banco de dados, é necessário verificar como o banco está configurado
+No Menu Iniciar digite: Serviços e clique na primeira opção
+
+Na coluna 'Nome', clique em qualquer um dos processos e aperte a tecla M
+Procure por MySQL80 e clique nele, verifique se o Status desse processo está 'Em Execução'
+E se a coluna 'Tipo de Inicialização' está como 'Manual', se estiver configurado assim então feche a janela
+
+Caso contrário clique com o botão direito do mouse em 'MySQL80', no campo 'Tipo de inicialização' mude para [Manual    ] 
+Na parte inferior em 'Status do serviço' clique no botão [ Iniciar ], caso já não esteja selecionado
+Clique em Aplicar e depois em OK, e feche a janela
+
+4 - Clique na janela do programa aberto anteriormente chamado MySQL Workbench, após a finalização da instalação
+Na parte esquerda no centro, vai ter esse campo 'MySQL Connections' nele tem duas opções em círculos 
+
+(+) e (FERRAMENTA), clique no (+), vai abrir uma janela, no primeiro campo 'Connection Name' digite:dev
+No campo 'Username' apague o nome escrito "root" e escreva:developer e clique em OK
+
+Agora existem duas conexões, Local instance MySQL80 e dev, clique em dev, no campo 'Password' digite:1234567
+Marque a caixinha [] Save password in vault, e clique em OK
+
+Na parte inferior a esquerda, tem uma coluna lateral com duas opções, 'Administration' e 'Schemas'
+Clique em 'Schemas', e copie todo esse código:
+
+CREATE DATABASE coursejdbc;
+USE coursejdbc;
+
+CREATE TABLE department (
+  Id int(11) NOT NULL AUTO_INCREMENT,
+  Name varchar(60) DEFAULT NULL,
+  PRIMARY KEY (Id)
+);
+
+CREATE TABLE seller (
+  Id int(11) NOT NULL AUTO_INCREMENT,
+  Name varchar(60) NOT NULL,
+  Email varchar(100) NOT NULL,
+  BirthDate datetime NOT NULL,
+  BaseSalary double NOT NULL,
+  DepartmentId int(11) NOT NULL,
+  PRIMARY KEY (Id),
+  FOREIGN KEY (DepartmentId) REFERENCES department (id)
+);
+
+INSERT INTO department (Name) VALUES 
+  ('Computers'),
+  ('Electronics'),
+  ('Fashion'),
+  ('Books');
+
+INSERT INTO seller (Name, Email, BirthDate, BaseSalary, DepartmentId) VALUES 
+  ('Bob Brown','bob@gmail.com','1998-04-21 00:00:00',1000,1),
+  ('Maria Green','maria@gmail.com','1979-12-31 00:00:00',3500,2),
+  ('Alex Grey','alex@gmail.com','1988-01-15 00:00:00',2200,1),
+  ('Martha Red','martha@gmail.com','1993-11-30 00:00:00',3000,4),
+  ('Donald Blue','donald@gmail.com','2000-01-09 00:00:00',4000,3),
+  ('Alex Pink','bob@gmail.com','1997-03-04 00:00:00',3000,2);
+
+5 - Clique na parte do centro da página '[Query 1  x]' onde tem o número 1 em azul
+E cole o código copiado anteriormente, e clique no ícone de raio amarelo 
+Que está ao lado de outro raio amarelo com o número um em algarismo romano
+
+Se você passar o mouse sobre ele, vai aparecer um informativo, que seria esse:
+Execute the selected portion of the script or everything, if there is no selection
+
+Agora você já pode fechar o programa "MySQL Workbench"
+
+Agora na Área de Trabalho/Desktop, execute o atalho myApp e pronto!
+

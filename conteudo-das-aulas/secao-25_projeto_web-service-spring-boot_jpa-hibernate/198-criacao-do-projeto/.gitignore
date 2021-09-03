@@ -1,7 +1,3 @@
-# conteudo-das-aulas
-conteudo-das-aulas/*
-!conteudo-das-aulas/secao-25_projeto_web-service-spring-boot_jpa-hibernate
-
 HELP.md
 target/
 !.mvn/wrapper/maven-wrapper.jar

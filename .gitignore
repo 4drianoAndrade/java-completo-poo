@@ -1,6 +1,6 @@
 # conteudo-das-aulas
 conteudo-das-aulas/*
-!conteudo-das-aulas/secao-25_projeto_web-service-spring-boot_jpa-hibernate
+!conteudo-das-aulas/secao-26_projeto_api-restful-spring-boot-com-mongodb
 
 HELP.md
 target/
